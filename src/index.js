@@ -1,13 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Route,Link,Switch,BrowserRouter  } from 'react-router-dom'
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Login from './Login';
+import Register from './Register';
+import Notfound from './Notfound';
+
+import {BrowserRouter as Router ,} from 'react';
+const routing = (<BrowserRouter>
+<Switch>
+    <Route exact path="/" component={App} />
+    <Route path="/login" component={Login} />
+    <Route path="/Register" component={Register} />
+    <Route  component={Notfound} />
+    </Switch>
+   
+  </BrowserRouter>
+)
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+ 
+  routing
+ ,
   document.getElementById('root')
 );
 
